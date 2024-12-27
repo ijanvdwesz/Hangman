@@ -38,7 +38,7 @@ const Keyboard = ({ guessedLetters, onGuess, restartGame }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress); // Cleans up event listener on unmount
     };
-  }, [guessedLetters]); // Adds guessedLetters as dependency to re-run effect when guessedLetters changes
+  },[handleKeyPress]);
 
   return (
     <div className="keyboard">
