@@ -1,5 +1,5 @@
 // Imports React and useEffect hook for side effects
-import React, { useEffect } from 'react';
+import React, { useEffect,UseCallback } from 'react';
 
 // Defines the Keyboard component, which receives guessedLetters, onGuess, and restartGame as props
 const Keyboard = ({ guessedLetters, onGuess, restartGame }) => {
@@ -22,12 +22,15 @@ const Keyboard = ({ guessedLetters, onGuess, restartGame }) => {
   };
 
   // Handles key press event (triggered by physical keypress)
-  const handleKeyPress = (event) => {
-    const pressedKey = event.key.toUpperCase(); // Converts pressed key to uppercase
-    if (letters.includes(pressedKey)) {
-      handleKeyClick(pressedKey); // Calls handleKeyClick if the key is part of the defined letters
-    }
-  };
+ const handleKeyPress = useCallback(
+    (event) => {
+      const pressedKey = event.key.toUpperCase();
+      if (letters.includes(pressedKey)) {
+        handleKeyClick(pressedKey);
+      }
+    },
+    [guessedLetters, letters] // Includes dependencies used inside the callback
+  );
 
   //Event listener for keypress
   useEffect(() => {
