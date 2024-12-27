@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://ijanvdwesz.github.io/hangman",
+  "homepage": "https://ijanvdwesz.github.io/Hangman",
   "eslintConfig": {
     "extends": [
       "react-app",
