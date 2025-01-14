@@ -4,9 +4,7 @@ import React from 'react';
 const HangmanImage = ({ incorrectGuesses }) => {
   //Sets incorrect guesses to start from state1.GIF and ensures it doesn't exceed the max number of states (11)
   const adjustedState = Math.min(incorrectGuesses + 1, 11); // Uses Math.min to prevent exceeding 11 stages (max lives)
-  console.log(`Adjusted State: ${adjustedState}`);
-const imagePath = `/hangmandrawings/state${adjustedState}.GIF`;
-console.log(`Image Path: ${imagePath}`);
+  
   // Constructs the image path based on the current incorrect guesses
   const imagePath = `/hangmandrawings/state${adjustedState}.GIF`;
 
